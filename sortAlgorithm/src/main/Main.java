@@ -95,6 +95,7 @@ public class Main {
                 sumRuntime[11] = arraysSort(arr.clone());
                 sumRuntime[12] = collectionsSort(Arrays.asList(arr.clone()));
             }
+            System.out.println("complete one cycle.");
         }
         catch (Exception e) {
             e.printStackTrace();
