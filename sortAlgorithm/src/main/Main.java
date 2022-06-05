@@ -31,7 +31,7 @@ public class Main {
                 "CollectionsSort"
         };
 
-        final int[] sizeArr = {10000, 25000, 50000, 75000, 100000};
+        final int[] sizeArr = {10000, 20000, 30000, 40000, 50000};
 
         clearFile();
         tempRunAllSort();
@@ -129,19 +129,19 @@ public class Main {
 
         try {
             for (int i = 0; i < time; i++) {
-                sumRuntime[0] += bubbleSortTest(arr.clone());
-                sumRuntime[1] += selectionSortTest(arr.clone());
-                sumRuntime[2] += linearInsertionSortTest(arr.clone());
-                sumRuntime[3] += binaryInsertionSortTest(arr.clone());
-                sumRuntime[4] += shellSortTest(arr.clone());
-                sumRuntime[5] += heapSortTest(arr.clone());
+                sumRuntime[0] += 0; //bubbleSortTest(arr.clone());
+                sumRuntime[1] += 0; //selectionSortTest(arr.clone());
+                sumRuntime[2] += 0; //linearInsertionSortTest(arr.clone());
+                sumRuntime[3] += 0; //binaryInsertionSortTest(arr.clone());
+                sumRuntime[4] += 0; //shellSortTest(arr.clone());
+                sumRuntime[5] += 0; //heapSortTest(arr.clone());
                 sumRuntime[6] += recursiveMergeSortTest(arr.clone());
                 sumRuntime[7] += iterativeMergeSortTest(arr.clone());
                 sumRuntime[8] += naturalMergeSortTest(arr.clone());
-                sumRuntime[9] += recursiveQuickSortTest(arr.clone());
-                sumRuntime[10] += medianOfThreeQuickSortTest(arr.clone());
-                sumRuntime[11] += arraysSort(arr.clone());
-                sumRuntime[12] += collectionsSort(Arrays.asList(arr.clone()));
+                sumRuntime[9] += 0; //recursiveQuickSortTest(arr.clone());
+                sumRuntime[10] += 0; //medianOfThreeQuickSortTest(arr.clone());
+                sumRuntime[11] += 0; //arraysSort(arr.clone());
+                sumRuntime[12] += 0; //collectionsSort(Arrays.asList(arr.clone()));
             }
         }
         catch (Exception e) {

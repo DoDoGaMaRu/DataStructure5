@@ -7,7 +7,7 @@ public class IterativeMergeSort {
         Comparable[] from = arr;
         Comparable[] to = new Comparable[arrSize];
 
-        for (int size = 1; size < arrSize; size = 2) {
+        for (int size = 1; size < arrSize; size *= 2) {
             for (int low = 0; low <= arrSize; low += size * 2) {
                 merge(from, to, low, Math.min(low + size, arrSize), Math.min(low + size * 2, arrSize));
             }
