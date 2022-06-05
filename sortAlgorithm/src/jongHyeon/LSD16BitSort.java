@@ -1,8 +1,8 @@
 package jongHyeon;
 
-public class LSDSort {
+public class LSD16BitSort {
     public static void sort(Integer[] array) {
-        int R = 10;
+        int R = 0x16;
         int N = array.length;
         int[] t = new int[N];
 
