@@ -2,7 +2,7 @@ package jongHyeon;
 
 public class LSD16BitSort {
     public static void sort(Integer[] array) {
-        int R = 16;
+        int R = 0x16;
         int N = array.length;
         int[] t = new int[N];
 
