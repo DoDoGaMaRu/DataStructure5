@@ -1,8 +1,8 @@
 package assignment_03;
 
-public class LSD16BitShiftSort {
+public class HexLSDSort {
     public static void sort(Integer[] array) {
-        int R = 16;
+        int R = 0x16;
         int N = array.length;
         int[] t = new int[N];
 
@@ -12,22 +12,18 @@ public class LSD16BitShiftSort {
                 maxValue = array[i];
             }
         }
-        int maxExp = 0;
-        while (maxValue > 1) {
-            maxValue = maxValue >> 4;
-            maxExp++;
-        }
+        maxValue *= R;
 
-        for (int k = 0; k < maxExp; k++) {
+        for (int k = R; k <= maxValue; k *= R) {
             int[] startIndex = new int[R+1];
             for (int i = 0; i < N; i++) {
-                startIndex[((array[i] >> (4 * k)) & 15) + 1]++;
+                startIndex[(array[i] % k) / (k / R) + 1]++;
             }
             for (int r = 0; r < R; r++) {
                 startIndex[r+1] += startIndex[r];
             }
             for (int i = 0; i < N; i++) {
-                t[startIndex[(array[i] >> (4 * k)) & 15]++] = array[i];
+                t[startIndex[(array[i] % k) / (k / R)]++] = array[i];
             }
             for (int i = 0; i < N; i++) {
                 array[i] = t[i];
