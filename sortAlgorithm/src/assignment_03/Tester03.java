@@ -9,8 +9,8 @@ public class Tester03 {
         int[] sizeArr = {1000000, 2500000, 5000000};
         String[] sortName = {
                 "LSDSort",
-                "LSD16BitSort",
-                "LSD16BitShiftSort",
+                "HexLSDSort",
+                "BitShiftLSDSort",
                 "MedianOfThreeQuickSort"};
 
         for ( int i = 0; i < sizeArr.length; i++ ) {
@@ -19,8 +19,8 @@ public class Tester03 {
             for ( int j = 0; j < 5; j++) {
                 Integer[] arr = RandomArrayCreator.intArr(sizeArr[i]);
                 sumTime[0] += testLSD(arr.clone());
-                sumTime[1] += testLSD16BitSort(arr.clone());
-                sumTime[2] += testLSD16BitShitfSort(arr.clone());
+                sumTime[1] += testHexLSDSort(arr.clone());
+                sumTime[2] += testBitShiftLSDSort(arr.clone());
                 sumTime[3] += testMedianQuickSort(arr.clone());
             }
             for ( int k = 0; k < sortName.length; k++ ) {
@@ -28,8 +28,6 @@ public class Tester03 {
             }
             System.out.println();
         }
-
-
     }
 
     public static double testLSD(Integer[] arr) {
@@ -41,19 +39,19 @@ public class Tester03 {
         return (double) (afterTime - beforeTime) / 1000000;
     }
 
-    public static double testLSD16BitSort(Integer[] arr) {
-        LSD16BitSort.sort(RandomArrayCreator.intArr(100000));
+    public static double testHexLSDSort(Integer[] arr) {
+        HexLSDSort.sort(RandomArrayCreator.intArr(100000));
         long beforeTime = System.nanoTime();
-        LSD16BitSort.sort(arr);
+        HexLSDSort.sort(arr);
         long afterTime = System.nanoTime();
 
         return (double) (afterTime - beforeTime) / 1000000;
     }
 
-    public static double testLSD16BitShitfSort(Integer[] arr) {
-        LSD16BitShiftSort.sort(RandomArrayCreator.intArr(100000));
+    public static double testBitShiftLSDSort(Integer[] arr) {
+        BitShiftLSDSort.sort(RandomArrayCreator.intArr(100000));
         long beforeTime = System.nanoTime();
-        LSD16BitShiftSort.sort(arr);
+        BitShiftLSDSort.sort(arr);
         long afterTime = System.nanoTime();
 
         return (double) (afterTime - beforeTime) / 1000000;
