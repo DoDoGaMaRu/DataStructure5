@@ -10,12 +10,12 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        String[] state = {
+        final String[] state = {
                 "Random",
                 "Increase",
                 "Decrease"
         };
-        String[] sortName = {
+        final String[] sortName = {
                 "BubbleSort",
                 "SelectionSort",
                 "LinearInsertionSort",
@@ -31,7 +31,7 @@ public class Main {
                 "CollectionsSort"
         };
 
-        int[] sizeArr = {10000, 20000, 30000, 40000, 50000};
+        final int[] sizeArr = {10000, 25000, 50000, 75000, 100000};
 
         clearFile();
         tempRunAllSort();
@@ -111,11 +111,13 @@ public class Main {
 
 
     public static void testAllState(StringBuilder[][] result, Comparable[] arr) {
-        int time = 5;
+        int time = 10;
 
         testAllSort(result[0], time, arr);
+
         Arrays.sort(arr);
         testAllSort(result[1], time, arr);
+
         Arrays.sort(arr, Comparator.reverseOrder());
         testAllSort(result[2], time, arr);
 
@@ -320,8 +322,8 @@ public class Main {
         return (double) (afterTime - beforeTime) / 1000000;
     }
 
-    public static double collectionsSort(List arr) {
-        Collections.sort(arr);
+    public static double collectionsSort(List<Comparable> arr) {
+        Collections.sort(Arrays.asList(RandomArrayCreator.intArr(100000)));
         long beforeTime = System.nanoTime();
         Collections.sort(arr);
         long afterTime = System.nanoTime();
