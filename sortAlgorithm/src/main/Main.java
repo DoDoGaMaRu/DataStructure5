@@ -119,7 +119,6 @@ public class Main {
                 sumRuntime[11] += arraysSort(arr.clone());
                 sumRuntime[12] += collectionsSort(Arrays.asList(arr.clone()));
             }
-            System.out.println("complete one cycle.");
         }
         catch (Exception e) {
             e.printStackTrace();
@@ -191,7 +190,7 @@ public class Main {
 
 
 
-    public static double bubbleSortTest(Comparable[] arr) throws InterruptedException {
+    public static double bubbleSortTest(Comparable[] arr) {
         long beforeTime = System.nanoTime();
         BubbleSort.sort(arr);
         long afterTime = System.nanoTime();
@@ -199,7 +198,7 @@ public class Main {
         return (double) (afterTime - beforeTime) / 1000000;
     }
 
-    public static double selectionSortTest(Comparable[] arr) throws InterruptedException {
+    public static double selectionSortTest(Comparable[] arr) {
         long beforeTime = System.nanoTime();
         SelectionSort.sort(arr);
         long afterTime = System.nanoTime();
@@ -207,7 +206,7 @@ public class Main {
         return (double) (afterTime - beforeTime) / 1000000;
     }
 
-    public static double linearInsertionSortTest(Comparable[] arr) throws InterruptedException {
+    public static double linearInsertionSortTest(Comparable[] arr) {
         long beforeTime = System.nanoTime();
         LinearInsertionSort.sort(arr);
         long afterTime = System.nanoTime();
@@ -215,7 +214,7 @@ public class Main {
         return (double) (afterTime - beforeTime) / 1000000;
     }
 
-    public static double binaryInsertionSortTest(Comparable[] arr) throws InterruptedException {
+    public static double binaryInsertionSortTest(Comparable[] arr) {
         long beforeTime = System.nanoTime();
         BinaryInsertionSort.sort(arr);
         long afterTime = System.nanoTime();
@@ -223,7 +222,7 @@ public class Main {
         return (double) (afterTime - beforeTime) / 1000000;
     }
 
-    public static double shellSortTest(Comparable[] arr) throws InterruptedException {
+    public static double shellSortTest(Comparable[] arr) {
         long beforeTime = System.nanoTime();
         ShellSort.sort(arr);
         long afterTime = System.nanoTime();
@@ -231,7 +230,7 @@ public class Main {
         return (double) (afterTime - beforeTime) / 1000000;
     }
 
-    public static double heapSortTest(Comparable[] arr) throws InterruptedException {
+    public static double heapSortTest(Comparable[] arr) {
         long beforeTime = System.nanoTime();
         HeapSort.sort(arr);
         long afterTime = System.nanoTime();
@@ -239,7 +238,7 @@ public class Main {
         return (double) (afterTime - beforeTime) / 1000000;
     }
 
-    public static double recursiveMergeSortTest(Comparable[] arr) throws InterruptedException {
+    public static double recursiveMergeSortTest(Comparable[] arr) {
         long beforeTime = System.nanoTime();
         RecursiveMergeSort.sort(arr);
         long afterTime = System.nanoTime();
@@ -247,7 +246,7 @@ public class Main {
         return (double) (afterTime - beforeTime) / 1000000;
     }
 
-    public static double iterativeMergeSortTest(Comparable[] arr) throws InterruptedException {
+    public static double iterativeMergeSortTest(Comparable[] arr) {
         long beforeTime = System.nanoTime();
         IterativeMergeSort.sort(arr);
         long afterTime = System.nanoTime();
@@ -255,7 +254,7 @@ public class Main {
         return (double) (afterTime - beforeTime) / 1000000;
     }
 
-    public static double naturalMergeSortTest(Comparable[] arr) throws InterruptedException {
+    public static double naturalMergeSortTest(Comparable[] arr) {
         long beforeTime = System.nanoTime();
         NaturalMergeSort.sort(arr);
         long afterTime = System.nanoTime();
@@ -263,7 +262,7 @@ public class Main {
         return (double) (afterTime - beforeTime) / 1000000;
     }
 
-    public static double recursiveQuickSortTest(Comparable[] arr) throws InterruptedException {
+    public static double recursiveQuickSortTest(Comparable[] arr) {
         long beforeTime = System.nanoTime();
         RecursiveQuickSort.sort(arr);
         long afterTime = System.nanoTime();
@@ -271,7 +270,7 @@ public class Main {
         return (double) (afterTime - beforeTime) / 1000000;
     }
 
-    public static double medianOfThreeQuickSortTest(Comparable[] arr) throws InterruptedException {
+    public static double medianOfThreeQuickSortTest(Comparable[] arr) {
         long beforeTime = System.nanoTime();
         MedianOfThreeQuickSort.sort(arr);
         long afterTime = System.nanoTime();
@@ -279,7 +278,7 @@ public class Main {
         return (double) (afterTime - beforeTime) / 1000000;
     }
 
-    public static double arraysSort(Comparable[] arr) throws InterruptedException {
+    public static double arraysSort(Comparable[] arr) {
         long beforeTime = System.nanoTime();
         Arrays.sort(arr);
         long afterTime = System.nanoTime();
@@ -287,7 +286,7 @@ public class Main {
         return (double) (afterTime - beforeTime) / 1000000;
     }
 
-    public static double collectionsSort(List arr) throws InterruptedException {
+    public static double collectionsSort(List arr) {
         long beforeTime = System.nanoTime();
         Collections.sort(arr);
         long afterTime = System.nanoTime();

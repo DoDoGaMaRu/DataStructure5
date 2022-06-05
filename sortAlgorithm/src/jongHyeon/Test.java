@@ -1,12 +1,26 @@
 package jongHyeon;
 
+import main.RandomArrayCreator;
+import sort.IterativeMergeSort;
+
 import java.util.Arrays;
 
 public class Test {
     public static void main(String...args) {
-        int [] arr = {1, 3, 5, 7, 2, 6, 9, 0};
-        CountingSort.sort(arr);
+        Integer[] arr = RandomArrayCreator.intArr(35);
 
-        System.out.print(Arrays.toString(arr));
+        System.out.println(Arrays.toString(arr));
+        IterativeMergeSort.sort(arr);
+        System.out.println(Arrays.toString(arr));
+        System.out.println(isSorted(arr));
+    }
+
+    public static boolean isSorted(Comparable[] array) {
+        for (int i = 0; i < array.length - 1; i++) {
+            if ( array[i].compareTo(array[i+1]) > 0 ) {
+                return false;
+            }
+        }
+        return true;
     }
 }
